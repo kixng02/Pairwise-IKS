@@ -277,7 +277,7 @@ def get_existing_plant_names():
 
 def user_data_input_pairwise():
     """Allow users to input their own plant classification data for pairwise analysis"""
-    st.header("🌿 Insert Your Own Data")
+    st.header(" Insert Your Own Data")
     
     st.markdown("""
     **Instructions:**
