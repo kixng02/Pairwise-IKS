@@ -9,7 +9,7 @@ import io
 # Set page configuration
 st.set_page_config(
     page_title="Pairwise Agreement Analysis - AI Bias Study",
-    page_icon="🔍",
+    page_icon="",
     layout="wide"
 )
 
@@ -443,22 +443,22 @@ def run_study_data_analysis(analyzer):
                 st.metric("Interpretation", interpret_agreement(overall_agreement))
             
             # Pairwise heatmap
-            st.subheader("🎨 Pairwise Agreement Heatmap")
+            st.subheader("Pairwise Agreement Heatmap")
             heatmap_fig = create_pairwise_heatmap(agreement_matrix, model_names)
             st.pyplot(heatmap_fig)
             
             # Detailed comparison matrix
-            st.subheader("📊 Detailed Pairwise Comparisons")
+            st.subheader("Detailed Pairwise Comparisons")
             comparison_df = create_comparison_matrix(agreement_matrix, total_comparisons, model_names)
             st.dataframe(comparison_df, use_container_width=True)
             
             # Model performance chart
-            st.subheader("📈 Model Performance Comparison")
+            st.subheader("Model Performance Comparison")
             performance_fig, avg_agreements = create_model_performance_chart(agreement_matrix, model_names)
             st.pyplot(performance_fig)
             
             # Detailed plant-level analysis
-            st.subheader("🔍 Plant-Level Agreement Patterns")
+            st.subheader(" Plant-Level Agreement Patterns")
             plant_heatmap_fig = create_detailed_comparison_heatmap(ratings, plant_names, model_names)
             st.pyplot(plant_heatmap_fig)
             
@@ -493,7 +493,7 @@ def run_study_data_analysis(analyzer):
 
 def main():
     # Main title and description
-    st.title("🔍 Pairwise Agreement Analysis: AI Model Consistency")
+    st.title(" Pairwise Agreement Analysis: AI Model Consistency")
     st.markdown("""
     This application analyzes **pairwise agreement** between AI models (ChatGPT, Gemini, Mistral AI) 
     on plant classification tasks.
@@ -530,7 +530,7 @@ def main():
         ready_for_analysis = user_data_input_pairwise()
         
         if ready_for_analysis:
-            st.header("📈 Analyze Your Data")
+            st.header("Analyze Your Data")
             
             if st.button("Run Pairwise Analysis with Your Data", type="primary"):
                 with st.spinner("Calculating pairwise agreement..."):
@@ -548,7 +548,7 @@ def main():
                 
                 if agreement_matrix is not None:
                     # Display results
-                    st.header("📊 Your Pairwise Analysis Results")
+                    st.header("Your Pairwise Analysis Results")
                     
                     # Overall agreement
                     col1, col2, col3 = st.columns(3)
@@ -560,22 +560,22 @@ def main():
                         st.metric("Interpretation", interpret_agreement(overall_agreement))
                     
                     # Pairwise heatmap
-                    st.subheader("🎨 Pairwise Agreement Heatmap")
+                    st.subheader("Pairwise Agreement Heatmap")
                     heatmap_fig = create_pairwise_heatmap(agreement_matrix, model_names)
                     st.pyplot(heatmap_fig)
                     
                     # Detailed comparison matrix
-                    st.subheader("📊 Detailed Pairwise Comparisons")
+                    st.subheader("Detailed Pairwise Comparisons")
                     comparison_df = create_comparison_matrix(agreement_matrix, total_comparisons, model_names)
                     st.dataframe(comparison_df, use_container_width=True)
                     
                     # Model performance chart
-                    st.subheader("📈 Model Performance Comparison")
+                    st.subheader("Model Performance Comparison")
                     performance_fig, avg_agreements = create_model_performance_chart(agreement_matrix, model_names)
                     st.pyplot(performance_fig)
                     
                     # Export results
-                    st.subheader("💾 Export Your Results")
+                    st.subheader("Export Your Results")
                     
                     # Create downloadable data
                     export_data = []
@@ -598,7 +598,7 @@ def main():
                     )
     
     else:  # About mode
-        st.header("ℹ️ About Pairwise Agreement Analysis")
+        st.header("About Pairwise Agreement Analysis")
         st.markdown("""
         ### What is Pairwise Agreement?
         Pairwise agreement measures how often two raters (AI models) provide identical classifications 
