@@ -331,7 +331,7 @@ def user_data_input_pairwise():
     
     # Display current user data
     if st.session_state.user_plants_pairwise:
-        st.subheader("📋 Your Current Plant Data")
+        st.subheader(" Your Current Plant Data")
         display_data = []
         for plant in st.session_state.user_plants_pairwise:
             display_data.append({
@@ -463,7 +463,7 @@ def run_study_data_analysis(analyzer):
             st.pyplot(plant_heatmap_fig)
             
             # Research insights
-            st.subheader("🔬 Research Insights")
+            st.subheader(" Research Insights")
             
             # Find best and worst agreement pairs
             comparisons = []
